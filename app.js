@@ -11,7 +11,7 @@ const routesComplaint=require('./routes/complaint')
 const path = require('path');
 
 
-mongoose.connect( process.env.MONGODB_URI || `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@isreal.68yhf.mongodb.net/<dbname>?retryWrites=true&w=majority`,{
+mongoose.connect( process.env.MONGODB_URI || `mongodb+srv://amichi:sd4prLnYeQKUw7hr@isreal.68yhf.mongodb.net/<dbname>?retryWrites=true&w=majority`,{
     useNewUrlParser: true,
     useUnifiedTopology:true,
 })
