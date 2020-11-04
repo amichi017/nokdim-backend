@@ -56,7 +56,7 @@ module.exports = {
     },
     deleteComplaint: (req, res) => {
         const complaintId = req.params.complaintId
-        
+        console.log(complaintId,"complaintId")
         Complaint.findById(complaintId).then(() => {
             
             Complaint.deleteOne({ _id: complaintId }).then(() => {
