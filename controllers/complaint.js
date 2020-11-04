@@ -35,24 +35,45 @@ module.exports = {
             })
     },
     updateComplaint: (req, res) => {
-        // const complaintId = req.params.complaintId
+        const complaintId = req.params.complaintId
+        Complaint.findById(complaintId).then((category) => {
+            
+            Complaint.updateOne({ _id: complaintId }, req.body).then(() => {
+                res.status(200).json({
+                    message: `Update Complaint - ${complaintId}`
+                })
+            }).catch(error => {
+                res.status(500).json({
+                    error
+                })
+            });
+        }).catch(error => {
+            res.status(404).json({
+                message: 'complaint not found'
+            })
+        });
        
-        // Complaint.update({_id:complaintId},req.body).then(()=>{
-        //     res.status(200).json({
-        //         message: `Update Message - ${complaintId}`
-        //     })
-        // }).catch((err)=>{
-        //     res.status(200).json({
-        //         err
-        //     })
-        // })
     },
     deleteComplaint: (req, res) => {
-        const articleId = req.params.articleId
-    
-        res.status(200).json({
-            message: `Delete Complaint - ${articleId}`
-        })
+        const complaintId = req.params.complaintId
+        
+        Complaint.findById(complaintId).then(() => {
+            
+            Complaint.deleteOne({ _id: complaintId }).then(() => {
+                res.status(200).json({
+                    message: `Article _id:${complaintId} Deleted`
+                })
+            }).catch(error => {
+                res.status(500).json({
+                    error
+                })
+            });
+        }).catch(error => {
+            res.status(404).json({
+                message: 'complaint not found'
+            })
+        });
+        
     }
 }
  
