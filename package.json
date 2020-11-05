@@ -1,9 +1,9 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "engines": { 
+  "engines": {
     "node": "v12.18.1"
- },
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
