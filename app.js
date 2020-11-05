@@ -8,7 +8,9 @@ const helmet = require('helmet') // creates headers that protect from attacks (s
 const routesUser=require('./routes/user')
 const routesMessage=require('./routes/message')
 const routesComplaint=require('./routes/complaint')
+const routesPrayers=require('./routes/prayers')
 const path = require('path');
+
 
 
 mongoose.connect( process.env.MONGODB_URI || `mongodb+srv://amichi:sd4prLnYeQKUw7hr@isreal.68yhf.mongodb.net/<dbname>?retryWrites=true&w=majority`,{
@@ -44,6 +46,7 @@ app.use((req,res,next)=>{
 app.use('/user',routesUser)
 app.use('/message',routesMessage)
 app.use('/complaint',routesComplaint)
+app.use('/prayers',routesPrayers)
 
 
 app.use((req,res,next)=>{
