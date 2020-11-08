@@ -5,12 +5,15 @@ const User = require('../models/user');
 
 
 module.exports={
+    getAllUser:(req, res) => {
+         User.find().then((users)=>{
+            res.status(200).json({
+                users
+            })
+        })
+    },
     login:(req, res) => {
-        // User.find().then((users)=>{
-        //     res.status(200).json({
-        //         users
-        //     })
-        // })
+       
         const {user,password}=req.body;
         
         User.find({ user }).then((users) => {

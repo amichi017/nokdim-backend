@@ -11,6 +11,8 @@ const routesComplaint=require('./routes/complaint')
 const routesPrayers=require('./routes/prayers')
 const path = require('path');
 
+const cors = require('cors')
+
 
 
 mongoose.connect( process.env.MONGODB_URI || `mongodb+srv://amichi:sd4prLnYeQKUw7hr@isreal.68yhf.mongodb.net/<dbname>?retryWrites=true&w=majority`,{
@@ -24,6 +26,7 @@ console.log("connection")
 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(cors())
 app.use(express.urlencoded({
     extended:false
 }));
@@ -31,6 +34,7 @@ app.use(express.urlencoded({
 app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin','*');
     res.header('Access-Control-Allow-Header','origin,  x-requested-with, Content-Type, Accept, Authentication ');
+   // res.header('Access-Control-Allow-Methods',"PUT, POST, GET, PATCH, DELETE");
     if(req.method==='OPTIONS'){
         res.header('Access-Control-Allow-Methods',"PUT, POST, GET, PATCH, DELETE");
         return res.status(200).json({});

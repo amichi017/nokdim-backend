@@ -6,7 +6,7 @@ const prayersSchema = mongoose.Schema({
     afternoonPrayerOfSand : { type: String, required: true },//מנחה חול
     nightgPrayerOfSandA: { type: String, required: true },// ערבית חול מנין ראשון
     nightgPrayerOfSandB: { type: String, required: true },//ערבית חול מניין שני
-
+    Parasha  : { type: String, required: true },//פרשת השבוע
     afternoonPrayerOfFridayNight : { type: String, required: true },//תפילת מנחה ערב שבת
     morningPrayerOfSabbath: { type: String, required: true },//תפילת שחרית של שבת
     Psalms: { type: String, required: true },//תהילים
