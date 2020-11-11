@@ -18,10 +18,11 @@ module.exports = {
         const {user,message}=req.body;
         const objMessage=new Message({
             _id: new mongoose.Types.ObjectId(),
+            date:new Date(),
             user,
             message,
         });
-       console.log(objMessage)   
+        
         objMessage.save().then(()=>{
             res.status(200).json({
                 message: 'Create a new Message'

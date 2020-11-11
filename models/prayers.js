@@ -17,6 +17,7 @@ const prayersSchema = mongoose.Schema({
 
 
     Extensions : { type: Array, required: true },
+    date:{ type: Date, required: true },
    
    
 });

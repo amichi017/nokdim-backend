@@ -76,7 +76,8 @@ module.exports={
                 const objUser = new User({
                     _id: new mongoose.Types.ObjectId(),
                     user,
-                    password: hash
+                    password: hash,
+                    date:new Date(),
                 })
     
                 objUser.save().then((result) => {

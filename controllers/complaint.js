@@ -22,6 +22,7 @@ module.exports = {
                 _id: new mongoose.Types.ObjectId(),
                 user,
                 complaint,
+                date:new Date(),
             });
             console.log(objComplaint,'objComplaint')
             objComplaint.save().then(()=>{

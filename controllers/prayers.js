@@ -69,6 +69,7 @@ module.exports = {
     createPrayers: (req, res) => {
     
             const {
+                
                     morningPrayerOfSand,//שחרית חול 
                     afternoonPrayerOfSand ,//מנחה חול
                     nightgPrayerOfSandA,// ערבית חול מנין ראשון
@@ -82,6 +83,7 @@ module.exports = {
                     thirdMeal,//סעודה שלישית 
                     nightgPrayerOfShabbatCameOut,//ערבית של מוצאי שבת
                     Extensions,  
+                    
             }=req.body;
             let rowsShbat=[];
 
@@ -138,6 +140,7 @@ module.exports = {
                     thirdMeal:thirdMeal || 'מופיע בלוח המודעות',//סעודה שלישית 
                     nightgPrayerOfShabbatCameOut:nightgPrayerOfShabbatCameOut || rowsShbat[4],//ערבית של מוצאי שבת
                     Extensions, 
+                    date:new Date(),
                 });
                 console.log(objPrayers,'objComplaint')
                 objPrayers.save().then(()=>{

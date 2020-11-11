@@ -9,8 +9,9 @@ const routesUser=require('./routes/user')
 const routesMessage=require('./routes/message')
 const routesComplaint=require('./routes/complaint')
 const routesPrayers=require('./routes/prayers')
-const path = require('path');
+const routesPresence=require('./routes/presence')
 
+const path = require('path');
 const cors = require('cors')
 
 
@@ -51,6 +52,7 @@ app.use('/user',routesUser)
 app.use('/message',routesMessage)
 app.use('/complaint',routesComplaint)
 app.use('/prayers',routesPrayers)
+app.use('/presence',routesPresence)
 
 
 app.use((req,res,next)=>{
